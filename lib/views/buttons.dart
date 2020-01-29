@@ -12,12 +12,29 @@ class Buttons extends StatelessWidget {
             onPressed:() => Navigator.pop(context, false),
           )
         ),
-        body: Center(
-          child: RaisedButton(
-            child: Text('Raised Button'),
-            onPressed: () => print("object")
-          ),
-        ),
+        body: Align(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                child: Text('Raised Button'),
+                onPressed: () => print("You have pressed the RaisedButton.")
+              ),
+              DropdownButton(
+                items: [
+                  DropdownMenuItem(
+                    child: Text("Option 1")
+                  ),
+                  DropdownMenuItem(
+                    child: Text("Option 2")
+                  ),
+                ],
+                onChanged: (param) => print("Since this is a Stateless Widget, it cannot change the state of the current view." + 
+                "Make this a Statefull Widget in order to modify the UI.")
+              )
+            ],
+          )
+        )
       )
     );
   }
