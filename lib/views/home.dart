@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:reference_app/views/buttons.dart';
 
 class MyApp extends StatelessWidget{
 
-  ListTile _listItem(String title, String subtitle) => ListTile(
+  ListTile _listItem(String title, String subtitle, IconData icon, Function callback) => ListTile(
       title: Text(
         title,
         style: TextStyle(
@@ -10,34 +11,26 @@ class MyApp extends StatelessWidget{
             fontWeight: FontWeight.bold
         ),
       ),
-      subtitle: Text(subtitle)
+      subtitle: Text(subtitle),
+      leading: Icon(icon),
+      onTap: callback,
   );
 
-  ListView _listView(String title) => ListView(
-    children: <Widget>[
-
-    ],
-  );
-
-  Widget _buildList() => ListView(
+  Widget _buildList(BuildContext context) => ListView(
       children: [
-        _listItem("Title 1", "Subtitle"),
-        _listItem("Title 1", "Subtitle"),
-        _listItem("Title 1", "Subtitle"),
-        _listItem("Title 1", "Subtitle")
+        _listItem("Buttons", "Subtitle", Icons.crop_square, () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Buttons()))),
+        _listItem("Text", "Subtitle", Icons.text_fields, () => print("something")),
+        _listItem("Layouts", "Subtitle", Icons.border_all, () => print("something")),
       ]
   );
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Title",
-      home: Scaffold(
+    return Scaffold(
           appBar: AppBar(
               title: Text("Reference App", textDirection: TextDirection.ltr)
           ),
-          body: _buildList()
-      ),
+          body: _buildList(context)
     );
   }
 }
