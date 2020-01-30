@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reference_app/views/buttons.dart';
+import 'package:reference_app/views/texts.dart';
 
 class MyApp extends StatelessWidget{
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget{
   Widget _buildList(BuildContext context) => ListView(
       children: [
         _listItem("Buttons", "Subtitle", Icons.crop_square, () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Buttons()))),
-        _listItem("Text", "Subtitle", Icons.text_fields, () => print("something")),
+        _listItem("Input and selections", "Subtitle", Icons.text_fields, () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Texts()))),
         _listItem("Layouts", "Subtitle", Icons.border_all, () => print("something")),
       ]
   );
