@@ -7,6 +7,3 @@ void main() => runApp(
     home: MyApp()
   ) 
 );
-
-
-
