@@ -4,9 +4,7 @@ class Texts extends StatelessWidget {
   const Texts({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    bool isChecked = false;
-
+  Widget build(BuildContext context) {    
     return MaterialApp(
       title: "Texts",
       home: Scaffold(
