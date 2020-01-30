@@ -8,7 +8,7 @@ class Buttons extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: true,
           title: Text("something"),
-          leading: IconButton(icon:Icon(Icons.arrow_back),
+          leading: BackButton(
             onPressed:() => Navigator.pop(context, false),
           )
         ),
@@ -70,7 +70,7 @@ class Buttons extends StatelessWidget {
                 onPressed: () => print("You pressed the OutlineButton"),
               ),
 
-              
+              //TODO: Add last button type. 
             ],
           )
         )
