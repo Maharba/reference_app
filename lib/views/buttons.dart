@@ -32,7 +32,7 @@ class Buttons extends StatelessWidget {
                   ),
                 ],
                 onChanged: (param) => print("Since this is a Stateless Widget, it cannot change the state of the current view." + 
-                "Make this a Statefull Widget in order to modify the UI.")
+                "Make this a Stateful Widget in order to modify the UI.")
               ),
 
               FlatButton(
