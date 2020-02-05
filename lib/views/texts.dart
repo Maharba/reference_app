@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
 
-class Texts extends StatelessWidget {
-  const Texts({Key key}) : super(key: key);
+class Texts extends StatefulWidget {
+  Texts({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {    
+  _TextsState createState() => _TextsState();
+}
+
+class _TextsState extends State<Texts> {
+
+  bool _isChecked = false;
+
+  bool _checkBoxTapped(bool isChecked) {
+    setState(() {
+      _isChecked = isChecked;
+      print("The value of the checkbox presses has changed to ");
+    });
+    return _isChecked;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: "Texts",
       home: Scaffold(
@@ -23,9 +39,9 @@ class Texts extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Checkbox(
-                    value: true,
+                    value: _isChecked,
                     tristate: false,
-                    onChanged: (isChecked) => print("The value of the checkbox presses has changed to "),
+                    onChanged: (isChecked) => _checkBoxTapped(isChecked),
                   ),
                   
                   Checkbox(
